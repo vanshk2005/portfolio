@@ -34,7 +34,13 @@ function App() {
             >
               View Projects
             </a>
-
+<a
+    href="/resume.pdf"
+    target="_blank"
+    className="px-6 py-2 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-200"
+  >
+    Download Resume
+  </a>
             <a
               href="#contact"
               className="px-6 py-2 border border-white rounded-lg hover:bg-white hover:text-gray-900"

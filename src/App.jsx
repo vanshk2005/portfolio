@@ -132,70 +132,83 @@ function App() {
 
     </motion.div>
 
-    {/* FLIP PHOTO CARD */}
-<div className="hidden md:block perspective">
+    {/* PROFILE CARD — REVEAL ON FOCUS */}
+<div className="hidden md:block">
   <motion.div
     className="
-      relative
-      w-[300px] h-[420px]
-      preserve-3d
+      relative w-[300px] h-[420px]
+      rounded-[160px] overflow-hidden
+      cursor-pointer
+      shadow-xl
     "
-    whileHover={{ rotateY: 180 }}
-    transition={{ duration: 0.8, ease: "easeInOut" }}
-    animate={{ y: [0, -12, 0] }}
-    style={{ transformStyle: "preserve-3d" }}
+    initial="rest"
+    whileHover="hover"
+    whileTap="hover"
+    animate="rest"
   >
-    {/* FRONT (PHOTO) */}
-    <div
+    {/* IMAGE */}
+    <motion.img
+      src="/profile.png"
+      alt="Vansh"
+      className="w-full h-full object-cover"
+      variants={{
+        rest: { scale: 1 },
+        hover: { scale: 1.08 },
+      }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    />
+
+    {/* DARK OVERLAY */}
+    <motion.div
       className="
         absolute inset-0
-        backface-hidden
-        rounded-[160px]
-        overflow-hidden
-        border-4 border-white/20
-      "
-    >
-      {/* Glow */}
-      <div
-        className="
-          absolute inset-0
-          bg-gradient-to-tr from-purple-500 to-pink-500
-          blur-3xl opacity-40
-        "
-      />
-
-      {/* Image */}
-      <img
-        src="/profile.png"
-        alt="Vansh"
-        className="relative w-full h-full object-cover object-center"
-      />
-    </div>
-
-    {/* BACK (INFO) */}
-    <div
-      className="
-        absolute inset-0
-        backface-hidden
-        rounded-[160px]
-        bg-gray-900 text-white
+        bg-black/60
+        backdrop-blur-[2px]
         flex flex-col justify-center items-center
-        p-6 text-center
-        border-4 border-white/20
+        text-white text-center px-6
       "
-      style={{ transform: "rotateY(180deg)" }}
+      variants={{
+        rest: { opacity: 0 },
+        hover: { opacity: 1 },
+      }}
+      transition={{ duration: 0.4 }}
     >
-      <h2 className="text-2xl font-bold mb-2">Outside the Screen</h2>
-      <div className="space-y-2 text-sm">
+      <motion.h2
+        className="text-2xl font-bold mb-4"
+        variants={{
+          rest: { y: 20, opacity: 0 },
+          hover: { y: 0, opacity: 1 },
+        }}
+        transition={{ delay: 0.1 }}
+      >
+        Beyond the Code
+      </motion.h2>
+
+      <motion.div
+        className="space-y-2 text-sm"
+        variants={{
+          rest: { y: 20, opacity: 0 },
+          hover: { y: 0, opacity: 1 },
+        }}
+        transition={{ delay: 0.2 }}
+      >
         <p>🏋️ Gym & Powerlifting</p>
         <p>🏊 Swimming</p>
         <p>🏍️ Long rides</p>
         <p>🎮 PC gaming</p>
-      </div>
-      <p className="mt-5 text-s text-gray-400">
-    Balance creates consistency.
-  </p>
-    </div>
+      </motion.div>
+
+      <motion.p
+        className="mt-4 text-xs text-gray-300"
+        variants={{
+          rest: { opacity: 0 },
+          hover: { opacity: 1 },
+        }}
+        transition={{ delay: 0.35 }}
+      >
+        Balance creates consistency.
+      </motion.p>
+    </motion.div>
   </motion.div>
 </div>
 
@@ -211,19 +224,38 @@ function App() {
         whileInView="visible"
        viewport={{ once: false, amount: 0.3 }}
         className="min-h-screen flex items-start justify-center pt-32
-        bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white "
+        bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white "
       >
         <div className="max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            About Me
-          </h2>
+      About Me
+    </h2>
 
-          <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-            I’m a Computer Science student who enjoys building clean,
-            functional web applications and exploring AI-driven systems.
-            I like understanding how things work — from frontend UI to
-            backend logic.
-          </p>
+    <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto mb-5">
+      I’m a Computer Science student with a strong interest in building
+      scalable, performance-focused web applications. I enjoy understanding
+      how systems work end-to-end — from the user interface to the logic
+      that powers it behind the scenes.
+    </p>
+
+    <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
+      My approach to development emphasizes clean structure, clarity in
+      design, and thoughtful problem-solving. I prefer building solutions
+      that are simple on the surface but robust underneath.
+    </p>
+{/* ANIMATED DIVIDER */}
+    <motion.div
+      className="mx-auto h-[3px] w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"
+      animate={{ width: ["40%", "100%", "40%"] }}
+      transition={{ duration: 3, repeat: Infinity }}
+    />
+
+    <p className="mt-6 text-gray-400 text-sm max-w-2xl mx-auto">
+      I continuously work on improving my skills through hands-on projects,
+      experimentation with modern tools, and learning how real-world systems
+      are designed and optimized.
+    </p>
+
         </div>
       </motion.section>
 
@@ -346,7 +378,7 @@ function App() {
   initial="hidden"
   whileInView="visible"
   viewport={{ once: false, amount: 0.3 }}
-  className="min-h-screen flex items-start justify-center pt-32
+  className="min-h-screen flex items-start justify-center pt-24
   bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white"
 >
   <div className="max-w-lg w-full">
@@ -469,3 +501,4 @@ function App() {
 }
 
 export default App;
+

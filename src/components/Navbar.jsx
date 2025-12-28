@@ -13,7 +13,7 @@ function Navbar() {
       <nav
         className="
           fixed top-0 w-full z-50
-          bg-white/80 dark:bg-gray-900/80
+          bg-white dark:bg-gray-900
           backdrop-blur-md
           border-b border-gray-200 dark:border-gray-800
         "

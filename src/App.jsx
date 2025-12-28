@@ -231,14 +231,14 @@ function App() {
       About Me
     </h2>
 
-    <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto mb-5">
+    <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto mb-5">
       I’m a Computer Science student with a strong interest in building
       scalable, performance-focused web applications. I enjoy understanding
       how systems work end-to-end — from the user interface to the logic
       that powers it behind the scenes.
     </p>
 
-    <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
+    <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto mb-6">
       My approach to development emphasizes clean structure, clarity in
       design, and thoughtful problem-solving. I prefer building solutions
       that are simple on the surface but robust underneath.
@@ -250,7 +250,7 @@ function App() {
       transition={{ duration: 3, repeat: Infinity }}
     />
 
-    <p className="mt-6 text-gray-400 text-sm max-w-2xl mx-auto">
+    <p className="mt-6 text-gray-600 dark:text-gray-400 text-sm max-w-2xl mx-auto">
       I continuously work on improving my skills through hands-on projects,
       experimentation with modern tools, and learning how real-world systems
       are designed and optimized.

@@ -5,6 +5,12 @@ function NavItem({ label, href }) {
   return (
     <motion.a
       href={href}
+      onClick={(e) => {
+        
+        setTimeout(() => {
+          e.currentTarget.blur();
+        }, 0);
+      }}
       className="
         flex items-center gap-2 px-5 py-2 rounded-xl
         bg-purple-600/80 text-white font-semibold

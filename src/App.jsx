@@ -224,7 +224,7 @@ function App() {
         whileInView="visible"
        viewport={{ once: false, amount: 0.3 }}
         className="min-h-screen flex items-start justify-center pt-32
-        bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white "
+        bg-white text-gray-900 light:bg-white dark:bg-gray-900 dark:text-white "
       >
         <div className="max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">

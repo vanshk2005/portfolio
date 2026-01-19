@@ -8,8 +8,22 @@ body,
 }
 
 html {
+  background-color: white;
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 60px;
+  overflow-x: hidden;
+}
+.dark body {
+  background-color: #111827; 
+}
+section {
+  scroll-margin-top: 0rem; 
+}
+:target {
+  scroll-margin-top: 0rem;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
 }
 * {
   transition: background-color 0.3s ease, color 0.3s ease;

@@ -36,7 +36,7 @@ function App() {
       </h1>
 
       <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-xl">
-        Computer Science Student | Full-Stack & AI Enthusiast
+        Computer Science Student | Full-Stack Developer & AI Enthusiast
       </p>
       {/* CTA BUTTONS */}
 <div className="mt-6 flex flex-wrap gap-4">

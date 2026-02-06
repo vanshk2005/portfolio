@@ -1,10 +1,16 @@
 import AnimatedBackground from "./components/AnimatedBackground";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { fadeUp } from "./animations/scrollVariants";
 
 function App() {
+  
+useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
   return (
     <>
     <AnimatedBackground />
@@ -217,16 +223,16 @@ function App() {
 </motion.section>
 
       {/* ABOUT */}
-      <motion.section
-        id="about"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-       viewport={{ once: false, amount: 0.3 }}
-        className="min-h-screen flex items-start justify-center pt-32
-        bg-white text-gray-900 dark:bg-gray-900 dark:text-white "
-      >
-        <div className="max-w-3xl text-center">
+      <section
+  id="about"
+  className="
+    min-h-screen
+    flex items-start justify-center
+    px-6 pt-26
+    bg-gray-900 text-white
+  "
+>
+        <div className="max-w-6xl mx-auto px-6 pt-28 max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
       About Me
     </h2>
@@ -257,19 +263,22 @@ function App() {
     </p>
 
         </div>
-      </motion.section>
+      </section>
 
       {/* PROJECTS */}
 <motion.section
   id="projects"
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.3 }}
-  className="min-h-screen flex items-start justify-center pt-32
-  bg-white text-gray-900 dark:bg-gray-900 dark:text-white"
+  className="
+    min-h-screen  
+    flex items-start justify-center
+    pt-32
+    bg-white text-gray-900
+    dark:bg-gray-900 dark:text-white
+    scroll-mt-[112px]
+  "
 >
-  <div className="max-w-5xl w-full text-center">
+
+  <div className="mx-auto px-6 max-w-5xl w-full text-center">
     <h2 className="text-3xl md:text-4xl font-bold mb-6">
       Projects
     </h2>
@@ -374,14 +383,17 @@ function App() {
       {/* CONTACT */}
 <motion.section
   id="contact"
-  variants={fadeUp}
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.3 }}
-  className="min-h-screen flex items-start justify-center pt-24
-  bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-white"
+  className="
+    min-h-screen
+    flex items-start justify-center px-6
+    pt-20
+    bg-gray-100 text-gray-900
+    dark:bg-gray-900 dark:text-white
+    scroll-mt-[112px]
+  "
 >
-  <div className="max-w-lg w-full">
+
+  <div className="max-w-6xl mx-auto px-6 max-w-lg w-full">
     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
       Contact Me
     </h2>

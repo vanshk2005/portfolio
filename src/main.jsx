@@ -6,7 +6,9 @@ import "./index.css";
 
 // Force dark mode by default
 document.documentElement.classList.add("dark");
-
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
